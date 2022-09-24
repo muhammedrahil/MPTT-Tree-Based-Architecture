@@ -34,7 +34,7 @@ settings.py
  
  INSTALLED_APPS = (
     'mptt',
-)
+    )
 
 
 
@@ -45,7 +45,7 @@ python manage.py migrate
 
 
 5.
-admin
+admin.py
 
 
 class CategoryAdmin(DraggableMPTTAdmin):
