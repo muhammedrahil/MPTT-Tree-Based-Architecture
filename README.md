@@ -1,11 +1,12 @@
 # TREE-DATABASE-STRUCTURE
 tree-database-structure using django 
 
-1. pip install django-mptt
+1. ``` pip install django-mptt ```
 
 2.
 models.py
 
+```
 from django.template.defaultfilters import slugify
 from mptt.models import MPTTModel, TreeForeignKey
 
@@ -26,28 +27,30 @@ class Category(MPTTModel):
             full_path.append(k.category)
             k = k.parent
         return ' -> '.join(full_path[::-1])
+ ```
 
      
  
 3. 
 settings.py
- 
+ ```
  INSTALLED_APPS = (
     'mptt',
     )
 
-
+```
 
 4.
+```
 python manage.py makemigrations <your_app>
 python manage.py migrate
-
+```
 
 
 5.
 admin.py
 
-
+```
 class CategoryAdmin(DraggableMPTTAdmin):
     mptt_indent_field = "category"
     list_display = ('tree_actions', 'indented_title',
@@ -83,10 +86,10 @@ class CategoryAdmin(DraggableMPTTAdmin):
     related_products_cumulative_count.short_description = 'Related products (in tree)'
     
 admin.site.register(Category,CategoryAdmin)
-
+```
 6.
 template
-
+```
 {% load mptt_tags %}
 <ul>
     {% recursetree genres %}
@@ -100,3 +103,4 @@ template
         </li>
     {% endrecursetree %}
 </ul>
+```
