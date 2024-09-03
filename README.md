@@ -1,6 +1,10 @@
 # Tree-Based-Architecture
 tree-database-structure using django 
 
+MPTT is a technique for storing hierarchical data in a database. The aim is to make retrieval operations very efficient.
+
+The trade-off for this efficiency is that performing inserts and moving items around the tree is more involved, as there’s some extra work required to keep the tree structure in a good state at all times
+
 1. ``` pip install django-mptt ```
 
 2.
