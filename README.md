@@ -1,4 +1,4 @@
-# TREE-DATABASE-STRUCTURE
+# Tree-Based-Architecture
 tree-database-structure using django 
 
 1. ``` pip install django-mptt ```
